@@ -10,6 +10,9 @@ class Scene2 extends Phaser.Scene{
     create() {
         this.background = this.add.tileSprite(0, 0, config.width, config.height, "background");
         this.background.setOrigin(0,0);
+        this.background.setScrollFactor(0);
+        this.cameras.main.startFollow(this.player);
+        this.background.tilePositionX = this.myCam.scrollX * 0.3;
 
         this.ship1 = this.add.sprite(config.width/2 - 50, config.height/2, "ship");
         this.ship2 = this.add.sprite(config.width/2, config.height/2, "ship2");
